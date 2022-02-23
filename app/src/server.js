@@ -59,6 +59,11 @@ const port = 443; // must be the same to client.js signalingServerPort
 
 let io, server, host;
 
+app.enable('trust proxy')
+app.use((req, res, next) => {
+    req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
+})
+
 if (isHttps) {
     const fs = require('fs');
     const options = {
