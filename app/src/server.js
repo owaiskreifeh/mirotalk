@@ -62,8 +62,8 @@ let io, server, host;
 if (isHttps) {
     const fs = require('fs');
     const options = {
-        key: fs.readFileSync(path.join(__dirname, '../ssl/key.pem'), 'utf-8'),
-        cert: fs.readFileSync(path.join(__dirname, '../ssl/cert.pem'), 'utf-8'),
+        key: fs.readFileSync(process.env.certPathKey, 'utf-8'),
+        cert: fs.readFileSync(process.env.certPathCert, 'utf-8'),
     };
     server = https.createServer(options, app);
     host = 'https://' + 'localhost' + ':' + port;
