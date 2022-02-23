@@ -55,7 +55,7 @@ const Logger = require('./Logger');
 const log = new Logger('server');
 
 const isHttps = true; // must be the same to client.js isHttps
-const port = process.env.PORT || 80; // must be the same to client.js signalingServerPort
+const port = 443; // must be the same to client.js signalingServerPort
 
 let io, server, host;
 
