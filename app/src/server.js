@@ -66,7 +66,7 @@ if (isHttps) {
         cert: fs.readFileSync(process.env.certPathCert, 'utf-8'),
     };
     server = https.createServer(options, app);
-    host = 'https://' + 'localhost' + ':' + port;
+    host = 'https://' + process.env.host  + ':' + port;
 } else {
     server = http.createServer(app);
     host = 'http://' + 'localhost' + ':' + port;
