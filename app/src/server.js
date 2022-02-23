@@ -54,7 +54,7 @@ const app = express();
 const Logger = require('./Logger');
 const log = new Logger('server');
 
-const isHttps = false; // must be the same to client.js isHttps
+const isHttps = true; // must be the same to client.js isHttps
 const port = process.env.PORT || 3000; // must be the same to client.js signalingServerPort
 
 let io, server, host;
